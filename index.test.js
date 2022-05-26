@@ -93,7 +93,7 @@ describe('[Exercise 5] Seasons', () => {
     seasons.next()
     seasons.next()
     seasons.next()
-    expect(seasons.next).toBe('summer')
+    expect(seasons.next()).toBe('summer')
   })
   test('[14] the 40th call of seasons.next returns "spring"',() => {
     for(let i = 0;i<39;i++){
@@ -122,7 +122,7 @@ describe('[Exercise 6] Car', () => {
     expect(focus.tank).toBe(20)
     focus.drive(600)
     expect(focus.tank).toBe(0)
-    focus.refuel(80).toBe(600)
+    expect(focus.refuel(80)).toBe(600)
   })
   test('[18] adding fuel to a full tank has no effect', () => {
     expect(focus.tank).toBe(20)
@@ -135,9 +135,9 @@ describe('[Exercise 7] isEvenNumberAsync', () => {
   test('[19] resolves true if passed an even number', async() => {
     const actual = await utils.isEvenNumberAsync(4)
     expect(actual).toBe(true)
-  })
-  test('[20] resolves false if passed an odd number', () => {
+  },10000)
+  test('[20] resolves false if passed an odd number', async() => {
     const actual = await utils.isEvenNumberAsync(5)
     expect(actual).toBe(false)
   })
-})
+},10000)
