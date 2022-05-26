@@ -206,7 +206,6 @@ function isEvenNumberAsync(number) {
     }, 2000)
   })
   }
-  console.log(isEvenNumberAsync(4))
 module.exports = {
   trimProperties,
   trimPropertiesMutation,
